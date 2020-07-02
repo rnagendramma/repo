@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EXAMPLE OF HIDING</title>
+  <style>
+  span {
+    padding: 5px;
+    float: left;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+ 
+<button id="h">Hide</button>
+<button id="d">Display</button>
+<div>
+  <span>This</span> <span>is</span> <span>example</span>
+  <span>for</span> <span>hiding</span> <span>and</span>
+  <span>displaying..</span><span>It is</span>
+  <span>some what</span><span>fun :)</span>
+</div>
+ 
+<script>
+$( "#h" ).click(function() {
+  $( "span:last-child" ).hide( "fast", function() {
+    $( this ).prev().hide( "fast", arguments.callee );
+  });
+});
+$( "#d" ).click(function() {
+  $( "span" ).show( 2000 );
+});
+</script>
+</body>
+</html>
