@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validation() {
+  var x = document.forms["myForm"]["fname"].value;
+  var y = document.forms["myForm"]["pname"].value;
+  var z= document.forms["myForm"]["sname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+elseif (y == "") {
+    alert("Phone number must be filled out");
+    return false;
+  }
+elseif (z == "") {
+    alert("select atleast one check box");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+
+<form name="myForm" action="hforms.html" onsubmit="return validation()" method="post">
+  Name: <input type="text" name="fname" required>
+  Phone no: <input type="number" name="pname" required>
+  <label for="sname">subjects:</label><br>
+  <input type="checkbox" id="s1" name="s1" value="DS">
+<label for="s1">DS</label><br>
+<input type="checkbox" id="s2" name="s2" value="DAA">
+<label for="s2">DAA</label><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html
